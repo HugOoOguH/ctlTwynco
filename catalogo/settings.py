@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'home',
     'publicity',
     'social.apps.django_app.default',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -129,8 +130,9 @@ AUTHENTICATION_BACKENDS = (
     'social.backends.facebook.Facebook2OAuth2',
     )
 
-SOCIAL_AUTH_FACEBOOK_KEY = '1793949574168856'
-SOCIAL_AUTH_FACEBOOK_SECRET = '6709b492f51a00b9725cef92e331dada'
+SOCIAL_AUTH_FACEBOOK_KEY = '530051830517974'
+SOCIAL_AUTH_FACEBOOK_SECRET = '1c49d9d521ae38dc17b623d6e2703235'
 
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
+REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES':['rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',]}
