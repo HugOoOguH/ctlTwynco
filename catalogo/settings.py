@@ -135,4 +135,4 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '1c49d9d521ae38dc17b623d6e2703235'
 
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
-REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES':['rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',]}
+# REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES':['rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',]}
