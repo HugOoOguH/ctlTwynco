@@ -6,10 +6,12 @@ from accounts import urls as UrlsAccounts
 from publicity import urls as UrlsPublicity
 from django.views.static import serve
 from publicity.api import urls as apiUrls
+from accounts.api import urls as apiAccUrls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(apiUrls)),
+    url(r'^api/', include(apiAccUrls)),
     url(r'^accounts/', include(UrlsAccounts,namespace="accounts")),
     url(r'^publicity/', include(UrlsPublicity,namespace="publicity")),
     url('', include('social.apps.django_app.urls', namespace="social")),
