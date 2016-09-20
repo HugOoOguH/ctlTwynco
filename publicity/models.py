@@ -26,6 +26,9 @@ class Coupon(models.Model):
 	start_date = models.DateField()
 	final_date = models.DateField()
 	coins = models.IntegerField(blank=True, null=True)
+	total_coupon = models.IntegerField(blank=True, null=True)
+	exchanges_coupon = models.IntegerField(blank=True, null=True)
+
 
 	class Meta:
 		verbose_name = "Coupon"
