@@ -14,7 +14,7 @@ SECRET_KEY = 'or-z@^@8+@i@j-dk)g5ty63&q%75a4hs)+t*ybel*_+z+w&*$^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -31,17 +31,23 @@ INSTALLED_APPS = [
     'publicity',
     'social.apps.django_app.default',
     'rest_framework',
+    'rest_framework.authtoken',
+    'corsheaders',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'catalogo.urls'
 
@@ -135,4 +141,15 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '1c49d9d521ae38dc17b623d6e2703235'
 
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
-# REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES':['rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',]}
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES':[
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ]
+}
+
+
+
+# #Update database configuration with $DATABASE_URL.
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)

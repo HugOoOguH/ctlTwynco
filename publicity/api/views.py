@@ -11,14 +11,17 @@
 from ..models import Mark
 from .serializers import MarkSerializer
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 
 class MarkList(generics.ListCreateAPIView):
 	queryset = Mark.objects.all()
 	serializer_class = MarkSerializer
+	permission_classes = (IsAuthenticated,)
 
 class MarkDetail(generics.RetrieveUpdateDestroyAPIView):
 	queryset = Mark.objects.all()
 	serializer_class = MarkSerializer
+	permission_classes = (IsAuthenticated,)
 
 
 # class MarkList(APIView):
