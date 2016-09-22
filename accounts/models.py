@@ -6,13 +6,13 @@ from django.core.urlresolvers import reverse
 
 # Create your models here.
 class Profile(models.Model):
-	BOOL_CHOICES = ((True, 'Yes'), (False, 'No'))
+	BOOL_CHOICES = ((True, 'Man'), (False, 'Woman'))
 	user = models.OneToOneField(settings.AUTH_USER_MODEL)
 	coins = models.IntegerField(blank=True, null=True)
 	photo = models.ImageField(upload_to="users/%Y/%m/%d", blank=True)
 	age = models.IntegerField(blank=True,null=True)
-	sexH = models.BooleanField(choices=BOOL_CHOICES, default=False)
-	sexM = models.BooleanField(choices=BOOL_CHOICES, default=False)
+	sexH = models.BooleanField(choices=BOOL_CHOICES, default=True)
+	#sexM = models.BooleanField(choices=BOOL_CHOICES, default=False)
 
 	class Meta:
 		ordering = ('user',)

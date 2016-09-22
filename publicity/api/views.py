@@ -16,12 +16,12 @@ from rest_framework.permissions import IsAuthenticated
 class MarkList(generics.ListCreateAPIView):
 	queryset = Mark.objects.all()
 	serializer_class = MarkSerializer
-	permission_classes = (IsAuthenticated,)
+	#permission_classes = (IsAuthenticated,)
 
 class MarkDetail(generics.RetrieveUpdateDestroyAPIView):
 	queryset = Mark.objects.all()
 	serializer_class = MarkSerializer
-	permission_classes = (IsAuthenticated,)
+	#permission_classes = (IsAuthenticated,)
 
 
 # class MarkList(APIView):
